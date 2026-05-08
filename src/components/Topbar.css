@@ -1,0 +1,183 @@
+.topbar {
+  height: 70px;
+  background-color: var(--card-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-xl);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.topbar-route {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background-color: var(--bg-color);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+}
+
+.route-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.route-label {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.route-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.route-dot.start {
+  background-color: var(--status-green);
+}
+
+.route-dot.end {
+  background-color: var(--accent-red);
+}
+
+.route-location {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.route-divider {
+  display: flex;
+  align-items: center;
+  color: var(--text-secondary);
+  width: 16px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.weather-widget {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: var(--spacing-lg);
+  border-right: 1px solid #e2e8f0;
+}
+
+.weather-icon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--status-blue-light);
+  color: var(--status-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-info .temp {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.weather-info .condition {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.notification-btn {
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.notification-btn:hover {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+.notification-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.notification-btn .badge {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  background-color: var(--accent-red);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--card-bg);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.user-profile:hover {
+  background-color: var(--bg-color);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.avatar svg {
+  width: 20px;
+  height: 20px;
+}
+
+.user-role {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+}

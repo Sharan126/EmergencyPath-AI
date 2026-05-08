@@ -1,0 +1,124 @@
+.status-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-fast);
+  border: 1px solid #f1f5f9;
+}
+
+.status-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.status-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.status-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.status-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-amber { background-color: var(--status-amber-light); color: var(--status-amber); }
+.icon-gray { background-color: #f1f5f9; color: var(--text-secondary); }
+.icon-blue { background-color: var(--status-blue-light); color: var(--status-blue); }
+.icon-green { background-color: var(--status-green-light); color: var(--status-green); }
+.icon-purple { background-color: #f3e8ff; color: #9333ea; }
+.icon-red { background-color: var(--status-red-light); color: var(--accent-red); }
+
+.status-title-group h4 {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.status-value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.text-amber { color: var(--status-amber); }
+.text-blue { color: var(--status-blue); }
+.text-green { color: var(--status-green); }
+.text-purple { color: #9333ea; }
+
+.status-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-top: 4px;
+  flex-grow: 1;
+}
+
+/* Specific inner components */
+.bar-chart-mini {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 24px;
+  margin-top: 8px;
+}
+
+.bar-chart-mini .bar {
+  width: 6px;
+  border-radius: 2px;
+}
+
+.pothole-indicator {
+  margin-top: 8px;
+}
+
+.progress-bar-container {
+  height: 4px;
+  background-color: #e2e8f0;
+  border-radius: 2px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+}
+
+.hospital-features {
+  list-style: none;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hospital-features li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.check-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--status-green);
+}
