@@ -1,0 +1,159 @@
+.route-comparison-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.route-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.route-card {
+  background-color: var(--card-bg);
+  border: 1px solid #334155;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.route-card:hover {
+  transform: translateX(4px);
+  border-color: #475569;
+}
+
+/* Active State Overrides */
+.route-card.active {
+  background-color: rgba(15, 23, 42, 0.95);
+  transform: translateX(4px);
+}
+
+.route-green.active { border-color: var(--status-green); box-shadow: -4px 0 0 var(--status-green); }
+.route-blue.active { border-color: var(--status-blue); box-shadow: -4px 0 0 var(--status-blue); }
+.route-amber.active { border-color: #f59e0b; box-shadow: -4px 0 0 #f59e0b; }
+
+.active-glow-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.route-green.active .active-glow-overlay { background: radial-gradient(circle at top right, var(--status-green), transparent 70%); }
+.route-blue.active .active-glow-overlay { background: radial-gradient(circle at top right, var(--status-blue), transparent 70%); }
+.route-amber.active .active-glow-overlay { background: radial-gradient(circle at top right, #f59e0b, transparent 70%); }
+
+
+.route-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.route-letter {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background-color: #334155;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.route-green .route-letter { background-color: rgba(34, 197, 94, 0.2); color: #4ade80; }
+.route-blue .route-letter { background-color: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+.route-amber .route-letter { background-color: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+
+.route-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+.active-badge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.route-metrics {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0,0,0,0.2);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.metric-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: 10px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+.route-ai-reasoning {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: rgba(34, 197, 94, 0.1);
+  border-left: 2px solid var(--status-green);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 12px;
+  color: #dcfce7;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.route-ai-reasoning strong {
+  display: block;
+  color: #4ade80;
+  margin-bottom: 4px;
+}
+
+.route-warnings {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.warning-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #fbbf24;
+  background-color: rgba(245, 158, 11, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}

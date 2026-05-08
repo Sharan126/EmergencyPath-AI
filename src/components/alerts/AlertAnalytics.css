@@ -1,0 +1,71 @@
+.alert-analytics-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+}
+
+.analytics-stat-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-icon-bg {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.stat-sparkline {
+  position: absolute;
+  right: 16px;
+  width: 60px;
+  height: 30px;
+}
+
+.stat-trend {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+/* Tailwind generic utility replacements */
+.bg-red-100 { background-color: #fee2e2; }
+.text-red-600 { color: #dc2626; }
+.bg-orange-100 { background-color: #ffedd5; }
+.text-orange-600 { color: #ea580c; }
+.bg-green-100 { background-color: #dcfce7; }
+.text-green-600 { color: #16a34a; }
+.text-green-500 { color: #22c55e; }
+.bg-blue-100 { background-color: #dbeafe; }
+.text-blue-600 { color: #2563eb; }
+.font-bold { font-weight: 700; }
+.text-xs { font-size: 12px; }

@@ -1,0 +1,74 @@
+.safety-monitor {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.telemetry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.telemetry-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid transparent;
+}
+
+.tele-icon-wrapper {
+  margin-top: 2px;
+}
+
+/* Warning Levels */
+.tele-critical {
+  background-color: #fef2f2;
+  border-left-color: var(--accent-red);
+  color: var(--accent-red);
+  animation: bg-pulse-red 2s infinite alternate;
+}
+
+.tele-warning {
+  background-color: #fffbeb;
+  border-left-color: #f59e0b;
+  color: #d97706;
+}
+
+.tele-info {
+  background-color: #eff6ff;
+  border-left-color: #3b82f6;
+  color: #2563eb;
+}
+
+@keyframes bg-pulse-red {
+  from { background-color: #fef2f2; }
+  to { background-color: #fee2e2; }
+}
+
+.tele-content {
+  flex-grow: 1;
+}
+
+.tele-vehicle {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.tele-critical .tele-vehicle { color: var(--accent-red); }
+
+.badge-small {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: var(--radius-full);
+  background-color: rgba(0,0,0,0.05);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tele-message {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+}

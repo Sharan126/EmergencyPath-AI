@@ -1,0 +1,62 @@
+.alerts-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  height: calc(100vh - 70px);
+  gap: var(--spacing-md);
+  overflow: hidden;
+}
+
+.alerts-top-row {
+  flex-shrink: 0;
+}
+
+.alerts-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr 340px;
+  gap: var(--spacing-md);
+  flex-grow: 1;
+  min-height: 0; /* Important for scrollable columns in grid */
+}
+
+.alerts-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Custom scrollbar for left column */
+.alerts-left-col::-webkit-scrollbar {
+  width: 6px;
+}
+.alerts-left-col::-webkit-scrollbar-track {
+  background: transparent;
+}
+.alerts-left-col::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+
+.alerts-center-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.alerts-right-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media (max-width: 1400px) {
+  .alerts-grid {
+    grid-template-columns: 350px 1fr;
+  }
+  .alerts-right-col {
+    display: none;
+  }
+}

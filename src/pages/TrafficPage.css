@@ -1,0 +1,65 @@
+.traffic-dashboard-grid {
+  padding: var(--spacing-md);
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 360px 1fr 320px;
+  gap: var(--spacing-md);
+  height: calc(100vh - 70px);
+  overflow: hidden; /* Hide overflow so map takes full height */
+}
+
+.t-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  height: 100%;
+  overflow-y: auto;
+  /* Custom scrollbar */
+  padding-right: 4px;
+}
+
+.t-left-col::-webkit-scrollbar {
+  width: 6px;
+}
+.t-left-col::-webkit-scrollbar-track {
+  background: transparent;
+}
+.t-left-col::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+
+.t-center-col {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.t-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Tailwind utility replacements for inline use */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.bottom-6 { bottom: 24px; }
+.left-1\/2 { left: 50%; }
+.transform { transform: translateX(-50%); }
+.-translate-x-1\/2 { transform: translateX(-50%); }
+.w-\[80\%\] { width: 80%; }
+.max-w-\[500px\] { max-width: 500px; }
+.z-\[1000\] { z-index: 1000; }
+
+@media (max-width: 1400px) {
+  .traffic-dashboard-grid {
+    grid-template-columns: 320px 1fr;
+  }
+  .t-right-col {
+    display: none; /* Hide or move in responsive view */
+  }
+}

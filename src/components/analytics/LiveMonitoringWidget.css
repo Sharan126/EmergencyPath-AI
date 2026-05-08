@@ -1,0 +1,79 @@
+.live-monitoring-widget {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.live-status-badge {
+  background-color: var(--status-green-light);
+  color: var(--status-green);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  animation: pulse-opacity 2s infinite;
+}
+
+@keyframes pulse-opacity {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.mini-map-container {
+  width: 100%;
+  flex-grow: 1;
+  min-height: 200px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid #334155;
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom Marker CSS */
+.live-amb-marker {
+  position: relative;
+}
+
+.live-amb-inner {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.live-amb-inner svg {
+  width: 14px;
+  height: 14px;
+}
+
+.amb-emergency { background-color: var(--accent-red); }
+.amb-active { background-color: var(--status-blue); }
+
+.live-amb-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.amb-emergency-pulse {
+  background-color: var(--accent-red);
+  animation: hazard-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.amb-active-pulse {
+  background-color: var(--status-blue);
+  animation: hazard-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

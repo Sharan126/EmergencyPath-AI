@@ -1,0 +1,91 @@
+.navigation-map-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #0f172a;
+}
+
+/* Custom Marker Styles */
+.map-icon-dest {
+  width: 32px;
+  height: 32px;
+  background-color: white;
+  color: var(--accent-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border: 2px solid var(--accent-red);
+}
+
+.map-icon-dest svg {
+  width: 18px;
+  height: 18px;
+}
+
+.map-icon-amb-container {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.map-icon-amb {
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.5);
+  transition: transform 1s linear; /* Smooth movement between coordinates */
+}
+
+.map-icon-amb svg {
+  width: 16px;
+  height: 16px;
+}
+
+.map-icon-amb-pulse {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background-color: var(--accent-red);
+  animation: hazard-pulse 1.5s ease-out infinite;
+  z-index: 1;
+}
+
+/* Path Glow Effect */
+.glow-path-green {
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.8));
+}
+
+.map-overlay-top {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 400; /* Leaflet controls are usually z-index 400-1000 */
+  display: flex;
+  gap: 8px;
+}
+
+.map-badge {
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}

@@ -1,0 +1,61 @@
+.traffic-analytics-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+}
+
+.kpi-card {
+  background-color: var(--card-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kpi-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.kpi-value {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.analytics-chart-card {
+  padding: var(--spacing-md);
+  border: 1px solid #e2e8f0;
+}
+
+/* Tailwind Utilities */
+.h-32 { height: 128px; }
+.text-green-500 { color: #22c55e; }
+.bg-green-50 { background-color: #f0fdf4; }
+.text-red-500 { color: #ef4444; }
+.bg-red-50 { background-color: #fef2f2; }

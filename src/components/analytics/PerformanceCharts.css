@@ -1,0 +1,56 @@
+.performance-charts-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.analytics-big-card {
+  padding: var(--spacing-md);
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  min-height: 0;
+}
+
+.analytics-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.analytics-small-card {
+  padding: var(--spacing-md);
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-wrapper-small {
+  flex-grow: 1;
+  width: 100%;
+  min-height: 0;
+}
+
+.badge-outline {
+  font-size: 11px;
+  padding: 4px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Recharts overrides to match theme */
+.recharts-tooltip-cursor {
+  fill: rgba(0,0,0,0.03);
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}

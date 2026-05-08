@@ -1,0 +1,80 @@
+.health-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.health-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.health-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.health-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.health-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.health-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-healthy {
+  background-color: var(--status-green);
+  box-shadow: 0 0 0 3px var(--status-green-light);
+  animation: pulse-healthy 2s infinite;
+}
+
+@keyframes pulse-healthy {
+  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.dot-warning {
+  background-color: #f59e0b;
+  box-shadow: 0 0 0 3px #fef3c7;
+  animation: pulse-warning 1s infinite alternate;
+}
+
+@keyframes pulse-warning {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+.health-latency {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 11px;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.pb-2 { padding-bottom: 8px; }
