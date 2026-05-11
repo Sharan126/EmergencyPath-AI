@@ -1,0 +1,165 @@
+[
+  {
+    "id": 1,
+    "name": "Apollo City Hospital",
+    "type": "Multi-Specialty • Level 1 Trauma",
+    "location": {
+      "lat": 12.9715987,
+      "lng": 77.5945627
+    },
+    "distance": "4.2 km",
+    "eta": "11 min",
+    "safetyScore": 92,
+    "crowdStatus": "available",
+    "aiRecommended": true,
+    "aiReason": "Recommended because ICU available + trauma support + low waiting time.",
+    "rating": 4.8,
+    "readiness": "High",
+    "zone": "north",
+    "specialties": [
+      "cardio",
+      "trauma"
+    ],
+    "emergencyTypes": [
+      "accident",
+      "heart"
+    ],
+    "stats": {
+      "icuBedsAvailable": 12,
+      "icuBedsTotal": 50,
+      "emergencyAvailable": 8,
+      "emergencyTotal": 30,
+      "oxygenAvailable": 45,
+      "oxygenTotal": 100,
+      "ventilatorsAvailable": 5,
+      "ventilatorsTotal": 20,
+      "traumaAvailable": 3,
+      "traumaTotal": 10
+    },
+    "doctorsAvailable": 24,
+    "emergencyContact": "+91-8000-000-001",
+    "isFavorite": false
+  },
+  {
+    "id": 2,
+    "name": "Manipal Hospital",
+    "type": "General • Cardiac Center",
+    "location": {
+      "lat": 12.964,
+      "lng": 77.625
+    },
+    "distance": "3.1 km",
+    "eta": "14 min",
+    "safetyScore": 78,
+    "crowdStatus": "moderate",
+    "aiRecommended": false,
+    "aiReason": "",
+    "rating": 4.5,
+    "readiness": "Medium",
+    "zone": "east",
+    "specialties": [
+      "cardio",
+      "neuro"
+    ],
+    "emergencyTypes": [
+      "stroke",
+      "heart"
+    ],
+    "stats": {
+      "icuBedsAvailable": 2,
+      "icuBedsTotal": 40,
+      "emergencyAvailable": 4,
+      "emergencyTotal": 25,
+      "oxygenAvailable": 15,
+      "oxygenTotal": 80,
+      "ventilatorsAvailable": 1,
+      "ventilatorsTotal": 15,
+      "traumaAvailable": 1,
+      "traumaTotal": 5
+    },
+    "doctorsAvailable": 18,
+    "emergencyContact": "+91-8000-000-002",
+    "isFavorite": false
+  },
+  {
+    "id": 3,
+    "name": "Fortis Healthcare",
+    "type": "Multi-Specialty",
+    "location": {
+      "lat": 12.935,
+      "lng": 77.59
+    },
+    "distance": "6.5 km",
+    "eta": "22 min",
+    "safetyScore": 85,
+    "crowdStatus": "full",
+    "aiRecommended": false,
+    "aiReason": "",
+    "rating": 4.2,
+    "readiness": "Low",
+    "zone": "south",
+    "specialties": [
+      "burns",
+      "neuro"
+    ],
+    "emergencyTypes": [
+      "accident"
+    ],
+    "stats": {
+      "icuBedsAvailable": 0,
+      "icuBedsTotal": 30,
+      "emergencyAvailable": 0,
+      "emergencyTotal": 20,
+      "oxygenAvailable": 5,
+      "oxygenTotal": 50,
+      "ventilatorsAvailable": 0,
+      "ventilatorsTotal": 10,
+      "traumaAvailable": 0,
+      "traumaTotal": 4
+    },
+    "doctorsAvailable": 10,
+    "emergencyContact": "+91-8000-000-003",
+    "isFavorite": false
+  },
+  {
+    "id": 4,
+    "name": "Sakra World Hospital",
+    "type": "Multi-Specialty • Advanced Trauma",
+    "location": {
+      "lat": 12.925,
+      "lng": 77.65
+    },
+    "distance": "5.5 km",
+    "eta": "16 min",
+    "safetyScore": 95,
+    "crowdStatus": "available",
+    "aiRecommended": false,
+    "aiReason": "",
+    "rating": 4.7,
+    "readiness": "High",
+    "zone": "east",
+    "specialties": [
+      "trauma",
+      "neuro"
+    ],
+    "emergencyTypes": [
+      "accident",
+      "stroke"
+    ],
+    "stats": {
+      "icuBedsAvailable": 8,
+      "icuBedsTotal": 35,
+      "emergencyAvailable": 12,
+      "emergencyTotal": 40,
+      "oxygenAvailable": 60,
+      "oxygenTotal": 120,
+      "ventilatorsAvailable": 4,
+      "ventilatorsTotal": 25,
+      "traumaAvailable": 5,
+      "traumaTotal": 15
+    },
+    "doctorsAvailable": 32,
+    "emergencyContact": "+91-8000-000-004",
+    "isFavorite": false
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1778494374441",
+    "name": "sharan",
+    "email": "sm9505659@gmail.com",
+    "password": "$2b$10$LFZ2xO7jmGFBO.7BLgBBB..L4rXfM3NgmTrPgMhu7tgEfQC6ifZfi",
+    "role": "Paramedic"
+  },
+  {
+    "id": "1778494527853",
+    "name": "hari",
+    "email": "ghjhughjh@gmail.com",
+    "password": "$2b$10$zByQrQs/8gmCVOvvoSkM5eBXHT4nPbJcr.HykNeDnL1HQJz.DLh92",
+    "role": "Paramedic"
+  }
+]

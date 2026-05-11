@@ -1,0 +1,6 @@
+[
+  { "id": 1, "type": "critical", "message": "Manipal Hospital ICU Full", "timestamp": "2026-05-11T10:00:00Z" },
+  { "id": 2, "type": "warning", "message": "Oxygen shortage reported at City Care", "timestamp": "2026-05-11T09:45:00Z" },
+  { "id": 3, "type": "critical", "message": "Fortis Healthcare running on backup power", "timestamp": "2026-05-11T09:30:00Z" },
+  { "id": 4, "type": "warning", "message": "High traffic on Route 44 towards Apollo", "timestamp": "2026-05-11T09:15:00Z" }
+]

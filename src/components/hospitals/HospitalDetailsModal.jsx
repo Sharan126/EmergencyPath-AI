@@ -23,22 +23,25 @@ const HospitalDetailsModal = ({ hospital, onClose }) => {
 
           <div className="modal-header">
             <div className="modal-hospital-img">
-               {/* Placeholder image representation */}
                <div className="img-placeholder">
-                  H
+                  {hospital.name.charAt(0)}
                </div>
             </div>
             <div className="modal-hospital-title">
               <h2>{hospital.name}</h2>
-              <p>{hospital.type} • 4.8 Rating (2.1k Reviews)</p>
+              <p>{hospital.type} • {hospital.rating} Rating</p>
               <div className="flex gap-2 mt-2">
                 <span className="badge badge-green">Open 24/7</span>
-                <span className="badge badge-blue">Level 1 Trauma</span>
+                {hospital.specialties?.map(spec => (
+                  <span key={spec} className="badge badge-blue capitalize">{spec}</span>
+                ))}
               </div>
             </div>
             
             <div className="modal-quick-actions">
-              <button className="btn btn-outline btn-icon-only"><Phone size={18} /></button>
+              <button className="btn btn-outline btn-icon-only">
+                <a href={`tel:${hospital.emergencyContact}`} style={{color:'inherit'}}><Phone size={18} /></a>
+              </button>
               <button className="btn btn-primary">
                 <Navigation size={18} />
                 NAVIGATE NOW
@@ -58,12 +61,12 @@ const HospitalDetailsModal = ({ hospital, onClose }) => {
                 <div className="info-card">
                   <h4 className="flex items-center gap-2"><Clock size={16} className="text-blue-500" /> Wait Time & Readiness</h4>
                   <div className="flex justify-between mt-3 mb-2">
-                    <span className="text-sm text-gray-400">Est. ER Wait</span>
-                    <strong className="text-green-400">~5 mins</strong>
+                    <span className="text-sm text-gray-400">Est. ETA</span>
+                    <strong className="text-green-400">{hospital.eta}</strong>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm text-gray-400">Readiness Score</span>
-                    <strong className="text-blue-400">94/100</strong>
+                    <strong className="text-blue-400">{hospital.readiness}</strong>
                   </div>
                 </div>
 
@@ -71,20 +74,19 @@ const HospitalDetailsModal = ({ hospital, onClose }) => {
                   <h4 className="flex items-center gap-2"><Activity size={16} className="text-red-500" /> Live ICU Status</h4>
                   <div className="flex justify-between mt-3 mb-2">
                     <span className="text-sm text-gray-400">Available Beds</span>
-                    <strong className="text-green-400">12 / 50</strong>
+                    <strong className="text-green-400">{hospital.stats?.icuBedsAvailable} / {hospital.stats?.icuBedsTotal}</strong>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm text-gray-400">Ventilators</span>
-                    <strong className="text-amber-400">5 Available</strong>
+                    <strong className="text-amber-400">{hospital.stats?.ventilatorsAvailable} Available</strong>
                   </div>
                 </div>
 
                 <div className="info-card full-width">
                   <h4 className="flex items-center gap-2"><User size={16} className="text-purple-500" /> On-Duty Specialists</h4>
                   <div className="specialists-list mt-3">
-                    <div className="specialist-item">Dr. A. Sharma (Cardiology) - Available</div>
-                    <div className="specialist-item">Dr. R. Gupta (Trauma) - In ER</div>
-                    <div className="specialist-item">Dr. M. Singh (Neurology) - On Call</div>
+                    <div className="specialist-item">{hospital.doctorsAvailable} Doctors On-Call</div>
+                    <div className="specialist-item">Emergency Type Support: {hospital.emergencyTypes?.join(', ')}</div>
                   </div>
                 </div>
               </div>
@@ -96,7 +98,7 @@ const HospitalDetailsModal = ({ hospital, onClose }) => {
                   <ShieldCheck size={20} />
                   <div>
                     <strong>Secure Digital Handover</strong>
-                    <p className="text-xs">Send patient vitals directly to the ER team before arrival.</p>
+                    <p className="text-xs">Send patient vitals directly to {hospital.name} ER team before arrival.</p>
                   </div>
                 </div>
 
@@ -137,6 +139,10 @@ const HospitalDetailsModal = ({ hospital, onClose }) => {
             {activeTab === 'facilities' && (
               <div className="tab-content text-gray-300 text-sm">
                 <p>Advanced diagnostic imaging, 24/7 blood bank, burn unit, cardiac catheterization lab.</p>
+                <div className="mt-4">
+                  <strong>Oxygen Capacity:</strong> {hospital.stats?.oxygenAvailable} / {hospital.stats?.oxygenTotal} units <br/>
+                  <strong>Emergency Beds:</strong> {hospital.stats?.emergencyAvailable} / {hospital.stats?.emergencyTotal}
+                </div>
               </div>
             )}
           </div>
