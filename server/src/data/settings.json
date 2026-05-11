@@ -1,0 +1,27 @@
+{
+  "appearance": {
+    "theme": "dark",
+    "language": "kn",
+    "accessibility": {
+      "highContrast": false,
+      "reduceMotion": false,
+      "uiDensity": "compact"
+    }
+  },
+  "notifications": {
+    "emergencyAlerts": true,
+    "routeNotifications": true,
+    "civilianAlerts": true,
+    "systemNotifications": false
+  },
+  "ai": {
+    "optimizationLevel": "balanced",
+    "safetyPriority": 80
+  },
+  "map": {
+    "showTraffic": true,
+    "showWeather": true,
+    "showPotholes": true,
+    "defaultZoom": 12
+  }
+}

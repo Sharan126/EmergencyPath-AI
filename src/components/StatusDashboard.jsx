@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './StatusDashboard.css';
+import { DashboardContext } from '../pages/MainDashboard';
 
 const StatusDashboard = () => {
+  const { dashboardStatus } = useContext(DashboardContext);
+  
   return (
     <>
       {/* Card 1: Traffic Status */}
@@ -14,7 +17,7 @@ const StatusDashboard = () => {
            </div>
            <div className="status-title-group">
              <h4>TRAFFIC STATUS</h4>
-             <span className="status-value text-amber">Moderate</span>
+             <span className="status-value text-amber">{dashboardStatus?.traffic || 'Loading...'}</span>
            </div>
         </div>
         <p className="status-desc">Some congestion on outer ring road.</p>
@@ -36,7 +39,7 @@ const StatusDashboard = () => {
            </div>
            <div className="status-title-group">
              <h4>ROAD CONDITIONS</h4>
-             <span className="status-value text-amber">Fair</span>
+             <span className="status-value text-amber">{dashboardStatus?.roadCondition || 'Loading...'}</span>
            </div>
         </div>
         <p className="status-desc">Some potholes detected on current route.</p>
@@ -57,7 +60,7 @@ const StatusDashboard = () => {
            </div>
            <div className="status-title-group">
              <h4>WEATHER</h4>
-             <span className="status-value text-blue">Raining</span>
+             <span className="status-value text-blue">{dashboardStatus?.weather || 'Loading...'}</span>
            </div>
         </div>
         <p className="status-desc">Drive carefully. Roads may be slippery.</p>
@@ -76,7 +79,7 @@ const StatusDashboard = () => {
            </div>
            <div className="status-title-group">
              <h4>SIGNAL PRE-EMPTION</h4>
-             <span className="status-value text-green">Active</span>
+             <span className="status-value text-green">{dashboardStatus?.signalPreemption || 'Loading...'}</span>
            </div>
         </div>
         <p className="status-desc">Traffic lights will turn green on your path.</p>
@@ -95,7 +98,7 @@ const StatusDashboard = () => {
            </div>
            <div className="status-title-group">
              <h4>CIVILIAN ALERTS</h4>
-             <span className="status-value text-purple">Active</span>
+             <span className="status-value text-purple">{dashboardStatus?.civilianAlerts || 'Loading...'}</span>
            </div>
         </div>
         <p className="status-desc">Drivers notified within 300m radius.</p>

@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './MapArea.css';
+import { DashboardContext } from '../pages/MainDashboard';
 
 const MapArea = () => {
+  const { ambulanceData } = useContext(DashboardContext);
+
+  // Parse distance to animate the ambulance
+  const distanceStr = ambulanceData?.distanceRemaining || '6.2 km';
+  const distanceVal = parseFloat(distanceStr);
+  const leftPos = isNaN(distanceVal) ? 20 : 87.5 - (distanceVal / 6.2) * (87.5 - 20);
+
   return (
     <div className="map-area card">
       <div className="map-background"></div>
@@ -56,7 +64,7 @@ const MapArea = () => {
          </svg>
          
          {/* Moving Ambulance */}
-         <div className="moving-ambulance" style={{ left: '20%', top: '50%', transform: 'translate(-50%, -50%)' }}>
+         <div className="moving-ambulance" style={{ left: `${leftPos}%`, top: '50%', transform: 'translate(-50%, -50%)', transition: 'left 3s linear' }}>
             <div className="ambulance-sprite">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 7h-3V6a4 4 0 0 0-4-4H4a2 2 0 0 0-2 2v10h2a3 3 0 0 0 6 0h4a3 3 0 0 0 6 0h2v-4l-3-3zm-9 3H8v2H6v-2H4V8h2V6h2v2h2v2zM7 16a1 1 0 1 1-1-1 1 1 0 0 1 1 1zm10 0a1 1 0 1 1-1-1 1 1 0 0 1 1 1zm4-3h-1.2A3.012 3.012 0 0 0 17 11.2V9l2.4 2.4zM16 8V6a2 2 0 0 0-2-2H4v10h1.2A3.012 3.012 0 0 0 8 12.2V10h6v2.2A3.012 3.012 0 0 0 17 14h3v1z" />
@@ -79,12 +87,12 @@ const MapArea = () => {
         <div className="tracking-left">
           <div className="tracking-status">
             <span className="live-dot pulse"></span>
-            LIVE TRACKING
+            {ambulanceData?.status === 'Arrived' ? 'ARRIVED' : 'LIVE TRACKING'}
           </div>
-          <div className="tracking-message">Ambulance moving...</div>
+          <div className="tracking-message">Speed: {ambulanceData?.speed || '...'}</div>
         </div>
         <div className="tracking-right">
-          <div className="distance-value">6.2 km</div>
+          <div className="distance-value">{ambulanceData?.distanceRemaining || '...'}</div>
           <div className="distance-label">to destination</div>
         </div>
       </div>
@@ -93,3 +101,4 @@ const MapArea = () => {
 };
 
 export default MapArea;
+

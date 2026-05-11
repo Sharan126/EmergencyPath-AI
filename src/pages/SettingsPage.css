@@ -62,7 +62,7 @@
 /* Global Settings Form Utility Classes */
 .settings-panel-header {
   padding: 24px 24px 16px 24px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border-color-strong);
   margin-bottom: 24px;
 }
 
@@ -109,9 +109,9 @@
 
 .form-input {
   padding: 10px 14px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--border-color-strong);
   border-radius: var(--radius-sm);
-  background-color: white;
+  background-color: var(--bg-color);
   font-family: inherit;
   font-size: 14px;
   color: var(--text-primary);
@@ -141,7 +141,7 @@
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #cbd5e1;
+  background-color: var(--border-color-strong);
   transition: .3s;
   border-radius: 24px;
 }
@@ -172,7 +172,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .toggle-row:last-child {
@@ -200,7 +200,7 @@
   -webkit-appearance: none;
   width: 100%;
   height: 6px;
-  background: #e2e8f0;
+  background: var(--border-color-strong);
   border-radius: 3px;
   outline: none;
 }

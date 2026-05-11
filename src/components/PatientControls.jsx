@@ -1,8 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './PatientControls.css';
+import { DashboardContext } from '../pages/MainDashboard';
 
 const PatientControls = () => {
   const [severity, setSeverity] = useState('Critical');
+  const [preferences, setPreferences] = useState({
+    avoidPotholes: true,
+    considerTraffic: true,
+    considerWeather: true,
+    smoothestRoute: true
+  });
+  
+  const { calculateRoute, loading } = useContext(DashboardContext);
+
+  const handlePreferenceToggle = (prefKey) => {
+    setPreferences(prev => ({ ...prev, [prefKey]: !prev[prefKey] }));
+  };
+
+  const handleFindRoute = () => {
+    calculateRoute({
+      severity,
+      destination: "City Hospital, Bangalore",
+      preferences
+    });
+  };
   
   return (
     <div className="card patient-controls">
@@ -53,27 +74,30 @@ const PatientControls = () => {
       <div className="control-group">
         <label className="control-label">Route Preferences</label>
         <div className="preferences-list">
-          {['Avoid Potholes', 'Consider Traffic', 'Consider Weather', 'Smoothest Route'].map((pref, index) => (
-            <label key={index} className="checkbox-label">
-              <div className="checkbox-custom active">
+          {Object.keys(preferences).map((prefKey) => (
+            <label key={prefKey} className="checkbox-label" onClick={() => handlePreferenceToggle(prefKey)}>
+              <div className={`checkbox-custom ${preferences[prefKey] ? 'active' : ''}`}>
                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                   <polyline points="20 6 9 17 4 12"></polyline>
+                   {preferences[prefKey] && <polyline points="20 6 9 17 4 12"></polyline>}
                  </svg>
               </div>
-              <span>{pref}</span>
+              <span style={{textTransform: 'capitalize'}}>{prefKey.replace(/([A-Z])/g, ' $1').trim()}</span>
             </label>
           ))}
         </div>
       </div>
 
-      <button className="btn btn-primary btn-large find-route-btn">
-        FIND SAFEST ROUTE
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
+      <button className="btn btn-primary btn-large find-route-btn" onClick={handleFindRoute} disabled={loading}>
+        {loading ? 'CALCULATING...' : 'FIND SAFEST ROUTE'}
+        {!loading && (
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        )}
       </button>
     </div>
   );
 };
 
 export default PatientControls;
+

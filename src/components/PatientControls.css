@@ -29,7 +29,7 @@
   background-color: var(--bg-color);
   border-radius: var(--radius-md);
   padding: 4px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-color-strong);
 }
 
 .severity-btn {
@@ -50,7 +50,7 @@
 }
 
 .severity-btn.active {
-  background-color: white;
+  background-color: var(--input-bg);
   color: var(--text-primary);
   box-shadow: var(--shadow-sm);
 }
@@ -110,13 +110,13 @@
 .hospital-input {
   width: 100%;
   padding: 10px 36px 10px 36px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-color-strong);
   border-radius: var(--radius-sm);
   font-size: 14px;
   font-weight: 500;
   color: var(--text-primary);
   outline: none;
-  background-color: white;
+  background-color: var(--input-bg);
   font-family: inherit;
 }
 
@@ -157,7 +157,7 @@
   width: 20px;
   height: 20px;
   border-radius: 4px;
-  border: 2px solid #cbd5e1;
+  border: 2px solid var(--border-color-strong);
   display: flex;
   align-items: center;
   justify-content: center;
